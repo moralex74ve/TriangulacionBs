@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangulación de Moneda</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💸</text></svg>">
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>Triangulación de Moneda</h1>
+
+        <div class="section">
+            <div class="section-title">Configuración de Tasas</div>
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="precioDolar">Precio de Dollar</label>
+                    <div class="input-with-action">
+                        <input type="number" id="precioDolar" placeholder="Ej. 50.50" step="0.01">
+                        <button id="fetchDolar" type="button" class="action-btn" title="Consultar BCV">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <!-- Símbolo Dollar Grande y Proporcional -->
+                                <path stroke="#10b981"
+                                    d="M12 2v13M16 5.5c0-2.5-1.5-3.5-4-3.5s-4 1-4 3.5 1.5 3.5 4 3.5 4 1 4 3.5-1.5 3.5-4 3.5-4-1-4-3.5" />
+                                <!-- Flecha Izquierda Inferior -->
+                                <path d="M18 21H6M6 21l3-3M6 21l3 3" stroke-width="2" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="cambioCOP">Cambio Por COP</label>
+                    <input type="number" id="cambioCOP" placeholder="Ej. 100" step="0.01">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header-row">
+                <div class="section-title">Costo del Artículo</div>
+                <div class="currency-selector">
+                    <input type="radio" name="currency" id="currUSD" value="USD">
+                    <label for="currUSD">USD</label>
+
+                    <input type="radio" name="currency" id="currBS" value="BS" checked>
+                    <label for="currBS">Bs</label>
+
+                    <input type="radio" name="currency" id="currCOP" value="COP">
+                    <label for="currCOP">COP</label>
+
+                    <div class="selection-slider"></div>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="costoInput" id="labelCosto">Costo en Bs de articulo</label>
+                <input type="number" id="costoInput" placeholder="Monto en Bs" step="0.01">
+            </div>
+        </div>
+
+        <div class="result-card">
+            <div class="result-item">
+                <span class="result-label" id="labelResultMain">Costo en Bs.</span>
+                <span id="resBs" class="result-value">0.00</span>
+            </div>
+            <div class="result-item"
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-top: 1rem;">
+                <span class="result-label" id="labelResultAlt">Monto en COP</span>
+                <span id="resCop" class="result-value highlight-alt">0.00</span>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
