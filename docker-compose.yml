@@ -1,0 +1,10 @@
+services:
+  triangulacion:
+    build: .
+    container_name: triangulacion-bs
+    ports:
+      - "8080:80"
+    restart: always
+    # CasaOS specific metadata (optional but helpful)
+    # labels:
+    #   icon: https://raw.githubusercontent.com/moralex74ve/TriangulacionBs/main/public/vite.svg
